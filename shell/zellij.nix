@@ -16,12 +16,12 @@
           bind "Esc" { SwitchToMode "Normal"; }
 
           bind "Ctrl e" { WriteChars "vi ."; Write 13; SwitchToMode "Normal"; }
-          bind "Ctrl r" { WriteChars "kubie ctx"; Write 13; SwitchToMode "Normal"; }
 
           bind "Ctrl u" { CloseFocus; SwitchToMode "Normal"; }
           bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
           bind "d" { Detach; }
           bind "s" { ToggleActiveSyncTab; SwitchToMode "Normal"; }
+          bind "m" { ToggleMouseMode; }
 
           bind "h" { MoveFocus "Left"; SwitchToMode "Normal"; }
           bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }

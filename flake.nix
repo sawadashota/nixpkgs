@@ -22,13 +22,6 @@
 
     # my custom neovim
     feovim.url = "github:breuerfelix/feovim";
-    krewfile.url = "github:brumhard/krewfile";
-
-    # sketchybar config
-    sketchybar = {
-      url = "github:FelixKratz/dotfiles";
-      flake = false;
-    };
   };
 
   outputs = { self, nixpkgs, darwin, home-manager, ... }@inputs:
@@ -39,10 +32,9 @@
       };
       overlays = with inputs; [
         feovim.overlay
-        #krewfile.overlay
       ];
       user = "shotasawada";
-      hostname = "shotasawada";
+      hostname = "macmini";
       system = "aarch64-darwin";
     in {
       formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt;

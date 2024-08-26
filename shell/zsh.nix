@@ -29,64 +29,40 @@
 
       source ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
 
-      bindkey '^e' edit-command-line
+      bindkey "^A" beginning-of-line
+      bindkey "^E" end-of-line
+      bindkey '^V' edit-command-line
       bindkey '^ ' autosuggest-accept
-      bindkey '^p' history-search-backward
-      bindkey '^n' history-search-forward
       bindkey '^f' fzf-file-widget
-
-      function cd() {
-        builtin cd $*
-        lsd
-      }
-
-      function mkd() {
-        mkdir $1
-        builtin cd $1
-      }
-
-      function take() { builtin cd $(mktemp -d) }
-      function vit() { nvim $(mktemp) }
 
       function gsm() { git submodule foreach "$* || :" }
 
-      function lgc() { git commit --signoff -m "$*" }
-      function lg() {
-        git add --all
-        git commit --signoff -a -m "$*"
-        git push
-      }
-
-      function pfusch() {
-        git add --all
-        git commit --amend --no-edit
-        git push --force-with-lease
-      }
-
       function dci() { docker inspect $(docker-compose ps -q $1) }
 
-      # RTL
-      function lmr () {
-        TICKET=$(git branch --show-current | grep -E -i -o '(contract-)?[0-9]{4,}' | tr '[:lower:]' '[:upper:]')
-        glab mr create --yes --remove-source-branch --title="$* - CONTRACT-$TICKET"
+      function peco-ghq () {
+        local selected_dir=$(ghq list | peco --query "$LBUFFER")
+        BUFFER="cd $(ghq root)/$selected_dir"
+        CURSOR=$#BUFFER
+        zle reset-prompt
+      }
+      zle -N peco-ghq
+      bindkey '^g' peco-ghq
+
+      function peco-history-selection() {
+          BUFFER=$(history -n 1 | tac  | awk '!a[$0]++' | peco)
+          CURSOR=$#BUFFER
+          zle reset-prompt
       }
 
-      function expose-customer() {
-        (
-          kubectl port-forward deployment/subscriptions 8080:8080 &
-          kubectl port-forward deployment/credits 8081:8080 &
-          kubectl port-forward deployment/customer-care-subscriptions 8082:8080 &
-          kubectl port-forward deployment/customer365 8083:8080 &
-          kubectl port-forward deployment/scoring 8084:8080 &
-          kubectl port-forward deployment/trialfraud 8085:8080 &
-
-          echo "Press CTRL-C to stop port forwarding"
-          wait
-        )
-      }
+      zle -N peco-history-selection
+      bindkey '^h' peco-history-selection
     '';
 
     shellAliases = {
+      #ls = "ls -GF";
+      #lla = "ls -la";
+      #ll = "ls -l";
+      tree = "tree -N";
       psf = "ps -aux | grep";
       lsf = "ls | grep";
       tssh = "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null";

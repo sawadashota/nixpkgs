@@ -38,7 +38,7 @@
           family = fontname;
           style = "ExtraLight";
         };
-        size = 17;
+        size = 14;
       };
       cursor.style = "Block";
 

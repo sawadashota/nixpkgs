@@ -1,8 +1,6 @@
 { pkgs, ... }: {
   imports = [
-    #./homebrew.nix
-    ./skhd.nix
-    ./yabai.nix
+    ./homebrew.nix
   ];
 
   environment = {
@@ -26,7 +24,6 @@
 
   networking = {
     knownNetworkServices = [ "Wi-Fi" ];
-    dns = [ "9.9.9.9" "1.1.1.1" "8.8.8.8" ];
   };
 
   fonts = {
@@ -60,12 +57,12 @@
         orientation = "bottom";
         dashboard-in-overlay = true;
         largesize = 85;
-        tilesize = 50;
-        magnification = true;
+        tilesize = 70;
+        magnification = false;
         launchanim = false;
         mru-spaces = false;
         show-recents = false;
-        show-process-indicators = false;
+        show-process-indicators = true;
         static-only = true;
       };
 
@@ -92,6 +89,13 @@
         NSWindowResizeTime = 0.0;
         "com.apple.sound.beep.feedback" = 0;
         "com.apple.trackpad.scaling" = 2.0;
+      };
+      CustomUserPreferences = {
+        "com.apple.screencapture" = {
+          location = "~/Downloads";
+          type = "png";
+          name = "SS";
+        };
       };
     };
   };

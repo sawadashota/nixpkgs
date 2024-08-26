@@ -6,7 +6,7 @@ system specific. everything inside `shell/` also works on linux.
 ## programs
 
 - distro: macOS
-- window manager: yabai
+- window manager: aerospace
 - bar: spacebar
 - terminal: alacritty + zellij
 - shell: zsh + pretzo
@@ -16,7 +16,7 @@ system specific. everything inside `shell/` also works on linux.
 ## architecture
 
 - `flake.nix`
-  - `darwinConfigurations.shotasawada` is the entrypoint for macOS
+  - `darwinConfigurations.macmini.private` is the entrypoint for macOS
 - `darwin/` nix-darwin configuration
 - `home-manager/` home-manager configuration
 - `shell/` cross-platform shell configuration
@@ -28,13 +28,13 @@ system specific. everything inside `shell/` also works on linux.
 # installation
 sh <(curl -L https://nixos.org/nix/install)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-git clone git@github.com:sawadashota/dotfiles.git ~/.nixpkgs
-# make sure your hostname is set to "shotasawada"
+git clone git@github.com:sawadashota/nixpkgs.git ~/.nixpkgs
+# make sure your hostname is set to "macmini.private"
 sudo reboot
 
 # build the system
 cd ~/.nixpkgs
-nix --experimental-features "nix-command flakes" build ".#darwinConfigurations.shotasawada.system"
+nix --experimental-features "nix-command flakes" build ".#darwinConfigurations.macmini.system"
 # switch to new system
 ./result/sw/bin/darwin-rebuild switch --flake ~/.nixpkgs
 
@@ -44,29 +44,20 @@ nix run nix-darwin -- switch --flake ~/.nixpkgs
 
 manual steps:
 
+- Reboot to enable IME
+- Configure 1Password
+  - Developer: SSH / CLI
+  - Browser: Google Chrome
 - enable brew services
-  - `brew services start borders`
-- update secrets from secrets manager
-- change macOS keybindings
-  - disable spotlight search
-  - alt + q | w | e | r | t to space 1-5
-  - disable input source swap keybindings
-  - mission control to alt + b
-- import `Nix Managed` complex modification in Karabiner
-- login to arc and sync settings
-- use EURKey as keyboard layout
-  - remove default keyboard layout
-  - https://superuser.com/questions/712306/remove-keyboard-layout-from-os-x-leaving-custom-layouts-only
-- set universalaccess until fixed in darwin
-  - reduceMotion
-  - recuceTransparency - decide
+  - `brew services start sketchybar`
+- Docker
+  - `colima start`
+  - `sudo ln -sf $HOME/.colima/default/docker.sock /var/run/docker.sock`
 - configure applications
   - raycast (use import / export)
-  - aldente
   - meetingbar
   - hiddenbar
   - time-out
-  - apple calender / mail
 - enable icloud sync
 - login to vscode for settings sync
 - enable key repeat for vim extension in intellij and vscode

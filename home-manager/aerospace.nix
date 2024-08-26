@@ -6,12 +6,12 @@
       enable-normalization-opposite-orientation-for-nested-containers = false
 
       [gaps]
-      inner.horizontal = 15
-      inner.vertical   = 15
-      outer.left       = 15
-      outer.bottom     = 15
-      outer.top        = 15
-      outer.right      = 15
+      inner.horizontal = 0
+      inner.vertical   = 0
+      outer.left       = 0
+      outer.bottom     = 0
+      outer.top        = 0
+      outer.right      = 0
 
       [mode.main.binding]
       alt-j = 'focus down'
@@ -79,7 +79,15 @@
       run = 'move-node-to-workspace 2'
 
       [[on-window-detected]]
-      if.app-name-regex-substring = 'arc'
+      if.app-name-regex-substring = 'wezterm'
+      run = 'move-node-to-workspace 2'
+
+      [[on-window-detected]]
+      if.app-name-regex-substring = 'chrome'
+      run = 'move-node-to-workspace 2'
+
+      [[on-window-detected]]
+      if.app-name-regex-substring = 'firefox'
       run = 'move-node-to-workspace 2'
 
       [[on-window-detected]]
@@ -88,25 +96,29 @@
 
       # chat
       [[on-window-detected]]
-      if.app-name-regex-substring = 'signal'
+      if.app-name-regex-substring = 'keybase'
       run = 'move-node-to-workspace 3'
 
       [[on-window-detected]]
-      if.app-name-regex-substring = 'messages'
+      if.app-name-regex-substring = 'line'
+      run = 'move-node-to-workspace 3'
+
+      [[on-window-detected]]
+      if.app-name-regex-substring = 'message'
       run = 'move-node-to-workspace 3'
 
       # utils
       [[on-window-detected]]
-      if.app-name-regex-substring = 'spotify'
+      if.app-name-regex-substring = 'music'
       run = 'move-node-to-workspace 4'
 
       [[on-window-detected]]
-      if.app-name-regex-substring = 'bitwarden'
+      if.app-name-regex-substring = '1password'
       run = 'move-node-to-workspace 4'
 
-      # business
+      # business communication
       [[on-window-detected]]
-      if.app-name-regex-substring = 'teams'
+      if.app-name-regex-substring = 'zoom'
       run = 'move-node-to-workspace 5'
 
       [[on-window-detected]]

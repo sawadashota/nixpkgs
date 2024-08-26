@@ -56,6 +56,17 @@
       fetch = { prune = true; };
       push.autoSetupRemote = true;
       delta = { line-numbers = true; };
+      ghq = { root = "~/repo/"; };
+      credential = { helper = "osxkeychain"; };
+    };
+  };
+
+    # GitHub CLI
+  programs.gh = {
+    enable = true;
+    #extensions = [ gh-markdown-preview ];
+    settings = {
+      editor = "nvim";
     };
   };
 }
