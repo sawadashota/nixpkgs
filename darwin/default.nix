@@ -13,13 +13,7 @@
   programs = { zsh.enable = true; };
 
   services = {
-    # FIXME: driver issues
-    karabiner-elements.enable = false;
     nix-daemon.enable = true;
-    sketchybar = {
-      enable = false;
-      extraPackages = with pkgs; [ jq gh ];
-    };
   };
 
   networking = {
@@ -29,7 +23,6 @@
   fonts = {
     packages = with pkgs; [
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-      sketchybar-app-font
     ];
   };
 
@@ -83,7 +76,7 @@
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
         InitialKeyRepeat = 10;
-        KeyRepeat = 2;
+        KeyRepeat = 1;
         NSAutomaticSpellingCorrectionEnabled = false;
         NSAutomaticWindowAnimationsEnabled = false;
         NSWindowResizeTime = 0.0;

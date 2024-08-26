@@ -7,8 +7,7 @@ system specific. everything inside `shell/` also works on linux.
 
 - distro: macOS
 - window manager: aerospace
-- bar: spacebar
-- terminal: alacritty + zellij
+- terminal: wezterm + zellij
 - shell: zsh + pretzo
 - editor: helix / neovim
   ([configuration](https://github.com/breuerfelix/feovim))
@@ -63,6 +62,9 @@ manual steps:
 - enable key repeat for vim extension in intellij and vscode
   - `defaults write -g ApplePressAndHoldEnabled -bool false`
 - connect bluetooth keyboard and select `disable internal keyboard`
+- Download [CleanShot X](https://licenses.cleanshot.com/download/cleanshotx) if you want
+- Install [iStat Menu 7](https://apps.apple.com/jp/app/istat-menus-7/id6499559693?l=en-US&mt=12)
+  - Download helper tool from [here](https://bjango.com/help/istatmenus7/helper/)
 
 ## update
 

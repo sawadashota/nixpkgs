@@ -16,7 +16,7 @@
     brews = [
       "sniffnet" # monitor network traffic
       #"aws-iam-authenticator" # eks login
-      "borders" # borders for windows
+      #"borders" # borders for windows
       "openai-whisper" # transcode audio to text
       "ykman"
 
@@ -30,6 +30,7 @@
       "nginx"
     ];
     casks = [
+      "wezterm"
       "cmd-eikana"
       "google-japanese-ime"
       "keybase"
@@ -57,8 +58,8 @@
       "sf-symbols" # patched font for sketchybar
       "time-out" # blurs screen every x mins
       "raycast" # launcher on steroids
-      "keycastr" # show keystrokes on screen
-      "obsidian" # zettelkasten
+      #"keycastr" # show keystrokes on screen
+      #"obsidian" # zettelkasten
       "visual-studio-code" # code editor
       "zed" # vim like editor
       "yubico-authenticator"
