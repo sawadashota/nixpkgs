@@ -5,8 +5,6 @@
   home.file.zellij = {
     target = ".config/zellij/config.kdl";
     text = ''
-      simplified_ui true
-      default_layout "compact"
       keybinds clear-defaults=true {
         normal {
           bind "Ctrl o" { SwitchToMode "tmux"; }
@@ -14,8 +12,6 @@
         tmux {
           bind "Ctrl o" { SwitchToMode "Normal"; }
           bind "Esc" { SwitchToMode "Normal"; }
-
-          bind "Ctrl e" { WriteChars "vi ."; Write 13; SwitchToMode "Normal"; }
 
           bind "Ctrl u" { CloseFocus; SwitchToMode "Normal"; }
           bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
@@ -35,6 +31,19 @@
           bind "Ctrl l" { GoToNextTab; SwitchToMode "Normal"; }
           bind "Ctrl h" { GoToPreviousTab; SwitchToMode "Normal"; }
         }
+      }
+      plugins {
+          tab-bar location="zellij:tab-bar"
+          status-bar location="zellij:status-bar"
+          strider location="zellij:strider"
+          compact-bar location="zellij:compact-bar"
+          session-manager location="zellij:session-manager"
+          welcome-screen location="zellij:session-manager" {
+              welcome_screen true
+          }
+          filepicker location="zellij:strider" {
+              cwd "/"
+          }
       }
       theme "tokyo-night-dark"
       themes {
