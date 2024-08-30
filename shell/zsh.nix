@@ -21,9 +21,6 @@
       # used for homebrew
       export XDG_DATA_DIRS=$XDG_DATA_DIRS:/opt/homebrew/share
 
-      # better kubectl diff
-      export KUBECTL_EXTERNAL_DIFF="dyff between --omit-header --set-exit-code"
-
       # used for RTL AWS login
       [ -f ~/.aws/env.sh ] && source ~/.aws/env.sh
 
@@ -78,6 +75,10 @@
       gclean =
         "git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done";
       weather = "curl -4 http://wttr.in/Koeln";
+
+      # zellij
+      zj = "zellij";
+      zjw = "zellij -l welcome";
 
       # nix
       ne = "nvim -c ':cd ~/.nixpkgs' ~/.nixpkgs";

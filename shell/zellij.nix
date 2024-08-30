@@ -7,7 +7,20 @@
     text = ''
       keybinds clear-defaults=true {
         normal {
-          bind "Ctrl o" { SwitchToMode "tmux"; }
+          // bind "Ctrl o" { SwitchToMode "tmux"; }
+        }
+        resize {
+            bind "Esc" { SwitchToMode "Normal"; }
+            bind "h" "Left" { Resize "Increase Left"; }
+            bind "j" "Down" { Resize "Increase Down"; }
+            bind "k" "Up" { Resize "Increase Up"; }
+            bind "l" "Right" { Resize "Increase Right"; }
+            bind "H" { Resize "Decrease Left"; }
+            bind "J" { Resize "Decrease Down"; }
+            bind "K" { Resize "Decrease Up"; }
+            bind "L" { Resize "Decrease Right"; }
+            bind "=" "+" { Resize "Increase"; }
+            bind "-" { Resize "Decrease"; }
         }
         renametab {
           bind "Enter" { SwitchToMode "Normal"; }
@@ -94,6 +107,18 @@
             bind "Ctrl c" "Esc" { SwitchToMode "Scroll"; }
             bind "Enter" { SwitchToMode "Search"; }
         }
+        session {
+            bind "Ctrl o" { SwitchToMode "Normal"; }
+            bind "Ctrl s" { SwitchToMode "Scroll"; }
+            bind "d" { Detach; }
+            bind "w" {
+                LaunchOrFocusPlugin "session-manager" {
+                    floating true
+                    move_to_focused_tab true
+                };
+                SwitchToMode "Normal"
+            }
+        }
         tmux {
           bind "Ctrl o" { SwitchToMode "Normal"; }
           bind "Esc" { SwitchToMode "Normal"; }
@@ -130,6 +155,9 @@
         }
         shared_except "move" "locked" {
             bind "Ctrl h" { SwitchToMode "Move"; }
+        }
+        shared_except "session" "locked" {
+            bind "Ctrl l" { SwitchToMode "Session"; }
         }
         shared_except "tmux" "locked" {
             bind "Ctrl o" { SwitchToMode "Tmux"; }
