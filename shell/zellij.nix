@@ -9,6 +9,91 @@
         normal {
           bind "Ctrl o" { SwitchToMode "tmux"; }
         }
+        renametab {
+          bind "Enter" { SwitchToMode "Normal"; }
+          bind "Esc" { UndoRenameTab; SwitchToMode "Normal"; }
+        }
+        scroll {
+            bind "Esc" { SwitchToMode "Normal"; }
+            bind "e" { EditScrollback; SwitchToMode "Normal"; }
+            bind "s" { SwitchToMode "EnterSearch"; SearchInput 0; }
+            bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
+            bind "j" "Down" { ScrollDown; }
+            bind "k" "Up" { ScrollUp; }
+            bind "Ctrl f" "PageDown" "Right" "l" { PageScrollDown; }
+            bind "Ctrl b" "PageUp" "Left" "h" { PageScrollUp; }
+            bind "d" { HalfPageScrollDown; }
+            bind "u" { HalfPageScrollUp; }
+            // uncomment this and adjust key if using copy_on_select=false
+            // bind "Alt c" { Copy; }
+        }
+        move {
+            bind "Esc" { SwitchToMode "Normal"; }
+            bind "n" "Tab" { MovePane; }
+            bind "p" { MovePaneBackwards; }
+            bind "h" "Left" { MovePane "Left"; }
+            bind "j" "Down" { MovePane "Down"; }
+            bind "k" "Up" { MovePane "Up"; }
+            bind "l" "Right" { MovePane "Right"; }
+        }
+        tab {
+            bind "Esc" { SwitchToMode "Normal"; }
+            bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
+            bind "h" "Left" "Up" "k" { GoToPreviousTab; }
+            bind "l" "Right" "Down" "j" { GoToNextTab; }
+            bind "n" { NewTab; SwitchToMode "Normal"; }
+            bind "x" { CloseTab; SwitchToMode "Normal"; }
+            bind "s" { ToggleActiveSyncTab; SwitchToMode "Normal"; }
+            bind "b" { BreakPane; SwitchToMode "Normal"; }
+            bind "]" { BreakPaneRight; SwitchToMode "Normal"; }
+            bind "[" { BreakPaneLeft; SwitchToMode "Normal"; }
+            bind "1" { GoToTab 1; SwitchToMode "Normal"; }
+            bind "2" { GoToTab 2; SwitchToMode "Normal"; }
+            bind "3" { GoToTab 3; SwitchToMode "Normal"; }
+            bind "4" { GoToTab 4; SwitchToMode "Normal"; }
+            bind "5" { GoToTab 5; SwitchToMode "Normal"; }
+            bind "6" { GoToTab 6; SwitchToMode "Normal"; }
+            bind "7" { GoToTab 7; SwitchToMode "Normal"; }
+            bind "8" { GoToTab 8; SwitchToMode "Normal"; }
+            bind "9" { GoToTab 9; SwitchToMode "Normal"; }
+            bind "Tab" { ToggleTab; }
+        }
+        pane {
+            bind "Esc" { SwitchToMode "Normal"; }
+            bind "h" "Left" { MoveFocus "Left"; }
+            bind "l" "Right" { MoveFocus "Right"; }
+            bind "j" "Down" { MoveFocus "Down"; }
+            bind "k" "Up" { MoveFocus "Up"; }
+            bind "p" { SwitchFocus; }
+            bind "n" { NewPane; SwitchToMode "Normal"; }
+            bind "d" { NewPane "Down"; SwitchToMode "Normal"; }
+            bind "r" { NewPane "Right"; SwitchToMode "Normal"; }
+            bind "x" { CloseFocus; SwitchToMode "Normal"; }
+            bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+            bind "z" { TogglePaneFrames; SwitchToMode "Normal"; }
+            bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+            bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
+            bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0;}
+        }
+        search {
+            bind "Esc" { SwitchToMode "Normal"; }
+            bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
+            bind "j" "Down" { ScrollDown; }
+            bind "k" "Up" { ScrollUp; }
+            bind "Ctrl f" "PageDown" "Right" "l" { PageScrollDown; }
+            bind "Ctrl b" "PageUp" "Left" "h" { PageScrollUp; }
+            bind "d" { HalfPageScrollDown; }
+            bind "u" { HalfPageScrollUp; }
+            bind "n" { Search "down"; }
+            bind "p" { Search "up"; }
+            bind "c" { SearchToggleOption "CaseSensitivity"; }
+            bind "w" { SearchToggleOption "Wrap"; }
+            bind "o" { SearchToggleOption "WholeWord"; }
+        }
+        entersearch {
+            bind "Ctrl c" "Esc" { SwitchToMode "Scroll"; }
+            bind "Enter" { SwitchToMode "Search"; }
+        }
         tmux {
           bind "Ctrl o" { SwitchToMode "Normal"; }
           bind "Esc" { SwitchToMode "Normal"; }
@@ -31,6 +116,24 @@
           bind "Ctrl l" { GoToNextTab; SwitchToMode "Normal"; }
           bind "Ctrl h" { GoToPreviousTab; SwitchToMode "Normal"; }
         }
+        shared_except "scroll" "locked" {
+            bind "Ctrl s" { SwitchToMode "Scroll"; }
+        }
+        shared_except "pane" "locked" {
+            bind "Ctrl p" { SwitchToMode "Pane"; }
+        }
+        shared_except "resize" "locked" {
+            bind "Ctrl n" { SwitchToMode "Resize"; }
+        }
+        shared_except "tab" "locked" {
+            bind "Ctrl t" { SwitchToMode "Tab"; }
+        }
+        shared_except "move" "locked" {
+            bind "Ctrl h" { SwitchToMode "Move"; }
+        }
+        shared_except "tmux" "locked" {
+            bind "Ctrl o" { SwitchToMode "Tmux"; }
+        }
       }
       plugins {
           tab-bar location="zellij:tab-bar"
@@ -45,20 +148,33 @@
               cwd "/"
           }
       }
-      theme "tokyo-night-dark"
+      theme "catppuccin-frappe"
       themes {
-          tokyo-night-dark {
-              fg 169 177 214
-              bg 26 27 38
-              black 56 62 90
-              red 249 51 87
-              green 158 206 106
-              yellow 224 175 104
-              blue 122 162 247
-              magenta 187 154 247
-              cyan 42 195 222
-              white 192 202 245
-              orange 255 158 100
+          catppuccin-frappe {
+              bg "#626880" // Surface2
+              fg "#c6d0f5"
+              red "#e78284"
+              green "#a6d189"
+              blue "#8caaee"
+              yellow "#e5c890"
+              magenta "#f4b8e4" // Pink
+              orange "#ef9f76" // Peach
+              cyan "#99d1db" // Sky
+              black "#292c3c" // Mantle
+              white "#c6d0f5"
+          }
+          nord {
+              fg 216 222 233 // #D8DEE9
+              bg 46 52 64 // #2E3440
+              black 59 66 82 // #3B4252
+              red 191 97 106 // #BF616A
+              green 163 190 140 // #A3BE8C
+              yellow 235 203 139 // #EBCB8B
+              blue 129 161 193 // #81A1C1
+              magenta 180 142 173 // #B48EAD
+              cyan 136 192 208 // #88C0D0
+              white 229 233 240 // #E5E9F0
+              orange 208 135 112 // #D08770
           }
       }
     '';
