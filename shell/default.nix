@@ -3,11 +3,7 @@
     ./zsh.nix
     ./direnv.nix
     ./zellij.nix
-    #./tmux.nix
     ./git.nix
-    #./k9s.nix
-    #./kubie.nix
-    #./krew.nix
   ];
 
   home = {
