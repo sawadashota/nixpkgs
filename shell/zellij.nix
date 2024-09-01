@@ -154,10 +154,10 @@
             bind "Ctrl t" { SwitchToMode "Tab"; }
         }
         shared_except "move" "locked" {
-            bind "Ctrl h" { SwitchToMode "Move"; }
+            bind "Ctrl m" { SwitchToMode "Move"; }
         }
         shared_except "session" "locked" {
-            bind "Ctrl l" { SwitchToMode "Session"; }
+            bind "Ctrl b" { SwitchToMode "Session"; }
         }
         shared_except "tmux" "locked" {
             bind "Ctrl o" { SwitchToMode "Tmux"; }

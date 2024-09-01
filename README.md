@@ -10,7 +10,7 @@ system specific. everything inside `shell/` also works on linux.
 - terminal: wezterm + zellij
 - shell: zsh + pretzo
 - editor: helix / neovim
-  ([configuration](https://github.com/breuerfelix/feovim))
+  ([configuration](https://github.com/sawadashota/feovim))
 
 ## architecture
 
@@ -19,7 +19,7 @@ system specific. everything inside `shell/` also works on linux.
 - `darwin/` nix-darwin configuration
 - `home-manager/` home-manager configuration
 - `shell/` cross-platform shell configuration
-- `github.com:breuerfelix/feovim` neovim configuration
+- `github.com:sawadashota/feovim` neovim configuration
 
 ## macos
 

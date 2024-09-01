@@ -21,7 +21,7 @@
       "github:nixos/nixpkgs/8193e46376fdc6a13e8075ad263b4b5ca2592c03";
 
     # my custom neovim
-    feovim.url = "github:breuerfelix/feovim";
+    feovim.url = "github:sawadashota/feovim";
   };
 
   outputs = { self, nixpkgs, darwin, home-manager, ... }@inputs:

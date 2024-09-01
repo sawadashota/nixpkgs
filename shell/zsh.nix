@@ -34,8 +34,6 @@
 
       function gsm() { git submodule foreach "$* || :" }
 
-      function dci() { docker inspect $(docker-compose ps -q $1) }
-
       function peco-ghq () {
         local selected_dir=$(ghq list | peco --query "$LBUFFER")
         BUFFER="cd $(ghq root)/$selected_dir"
@@ -56,9 +54,6 @@
     '';
 
     shellAliases = {
-      #ls = "ls -GF";
-      #lla = "ls -la";
-      #ll = "ls -l";
       tree = "tree -N";
       psf = "ps -aux | grep";
       lsf = "ls | grep";
@@ -74,7 +69,7 @@
 
       gclean =
         "git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done";
-      weather = "curl -4 http://wttr.in/Koeln";
+      weather = "curl -4 http://wttr.in/Tokyo";
 
       # zellij
       zj = "zellij";
