@@ -93,6 +93,7 @@
                 inherit inputs;
                 pkgs-zsh-fzf-tab =
                   import inputs.nixpkgs-zsh-fzf-tab { inherit system; };
+                user = user;
               };
               users.${user} = { ... }:
                 with inputs; {

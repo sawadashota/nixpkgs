@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, user, ... }: {
   programs.zellij = { enable = true; };
 
   # NOTE: the module only supports YAML config which is deprecated
@@ -162,6 +162,14 @@
         shared_except "tmux" "locked" {
             bind "Ctrl o" { SwitchToMode "Tmux"; }
         }
+        shared_except "locked" {
+            bind "Ctrl y" {
+                LaunchOrFocusPlugin "file:~/.config/zellij/plugins/room.wasm" {
+                    floating true
+                    ignore_case true
+                }
+            }
+        }
       }
       plugins {
           tab-bar location="zellij:tab-bar"
@@ -173,7 +181,7 @@
               welcome_screen true
           }
           filepicker location="zellij:strider" {
-              cwd "/"
+              cwd "/Users/${user}"
           }
       }
       theme "catppuccin-frappe"
@@ -206,5 +214,11 @@
           }
       }
     '';
+  };
+
+  # Plugins
+  home.file.".config/zellij/plugins/room.wasm".source = pkgs.fetchurl {
+    url = "https://github.com/rvcas/room/releases/download/v1.0.1/room.wasm";
+    sha256 = "sha256-pik/Cj6xuyd6vrno5GtrON4TW0rVRHHkcxD8pAMth9c=";
   };
 }
