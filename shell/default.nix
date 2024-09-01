@@ -79,8 +79,8 @@
       # programming
 
       ## python
-      # python3
-      # poetry # python tools
+      python3
+      poetry # python tools
 
       ## node
       deno # node runtime
@@ -181,12 +181,12 @@
         };
 
         editor = {
-          line-number = "relative";
+          line-number = "absolute";
           idle-timeout = 200;
           bufferline = "multiple";
           lsp.display-inlay-hints = true;
           cursor-shape.insert = "bar";
-          file-picker.hidden = false;
+          file-picker.hidden = true;
           whitespace.render = "all";
           indent-guides.render = true;
           statusline = {
@@ -240,7 +240,7 @@
 
     go = {
       enable = true;
-      package = pkgs.go_1_22;
+      package = pkgs.go_1_23;
       goPath = "go";
       goBin = "go/bin";
       goPrivate = [ ];
