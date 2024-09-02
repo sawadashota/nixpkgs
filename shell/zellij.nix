@@ -169,6 +169,13 @@
                     ignore_case true
                 }
             }
+            // bind F1 to open monocle in a new floating pane and open any results in a new tiled/floating pane
+            bind "F1" {
+                LaunchOrFocusPlugin "file:~/.config/zellij/plugins/monocle.wasm" {
+                    floating true
+                };
+                SwitchToMode "Normal"
+            }
         }
       }
       plugins {
@@ -220,5 +227,9 @@
   home.file.".config/zellij/plugins/room.wasm".source = pkgs.fetchurl {
     url = "https://github.com/rvcas/room/releases/download/v1.0.1/room.wasm";
     sha256 = "sha256-pik/Cj6xuyd6vrno5GtrON4TW0rVRHHkcxD8pAMth9c=";
+  };
+  home.file.".config/zellij/plugins/monocle.wasm".source = pkgs.fetchurl {
+    url = "https://github.com/imsnif/monocle/releases/download/v0.100.0/monocle.wasm";
+    sha256 = "sha256-MxS5OBEUdrcuRfvewLt+q24lb8J+3O4/yjbgMD6nnqQ=";
   };
 }
