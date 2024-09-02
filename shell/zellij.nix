@@ -169,7 +169,6 @@
                     ignore_case true
                 }
             }
-            // bind F1 to open monocle in a new floating pane and open any results in a new tiled/floating pane
             bind "F1" {
                 LaunchOrFocusPlugin "file:~/.config/zellij/plugins/monocle.wasm" {
                     floating true
