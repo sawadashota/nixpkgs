@@ -174,10 +174,6 @@
 
         keys = {
           insert = { j = { k = "normal_mode"; }; };
-          normal = {
-            C-m = ":write";
-            C-p = ":quit";
-          };
         };
 
         editor = {

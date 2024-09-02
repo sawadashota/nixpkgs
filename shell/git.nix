@@ -47,6 +47,7 @@
       "kls_database.db" # kotlin lsp
     ];
     extraConfig = {
+      core.editor = "hx";
       init.defaultBranch = "main";
       pull = {
         ff = false;
