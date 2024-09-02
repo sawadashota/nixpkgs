@@ -10,8 +10,8 @@
       expireDuplicatesFirst = true;
       ignoreDups = true;
       ignoreSpace = true; # ignore commands starting with a space
-      save = 20000;
-      size = 20000;
+      save = 10000;
+      size = 10000;
       share = true;
     };
 
