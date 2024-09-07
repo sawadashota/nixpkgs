@@ -21,6 +21,8 @@
       curl
       fd
       ripgrep # fast search
+      zstd
+      pwgen
 
       grc # colored log output
       gitAndTools.delta # pretty diff tool
@@ -71,10 +73,6 @@
       gzip
       findutils
       gawk
-
-      # cloud
-      awscli2
-      s3cmd
 
       # programming
 
@@ -135,16 +133,12 @@
 
       # programs
       g = "git";
-      k = "kubectl";
       d = "docker";
-      kca = "kubectl apply -f";
       dc = "docker-compose";
       poe = "poetry";
       tf = "terraform";
       nr = "npm run";
       py = "python";
-      pu = "pulumi";
-      cht = "cht.sh"; # terminal cheat sheet
     };
 
     sessionPath = [
@@ -157,7 +151,6 @@
       EDITOR = "nvim";
       VISUAL = "nvim";
       NIXPKGS_ALLOW_UNFREE = "1";
-      PULUMI_CONFIG_PASSPHRASE = "";
     };
   };
 

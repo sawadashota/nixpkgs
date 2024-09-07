@@ -17,18 +17,28 @@
       "sniffnet" # monitor network traffic
       #"aws-iam-authenticator" # eks login
       #"borders" # borders for windows
-      "openai-whisper" # transcode audio to text
+      # "openai-whisper" # transcode audio to text
       "ykman"
-      "pwgen"
 
       "docker"
       "docker-machine"
       "colima"
 
+      # cloud
+      "awscli"
+      "aws-sam-cli"
+      "terraform"
+      
+      # protocol buffers
+      "protobuf"
+      "buf"
+
       # work
       "libmagic"
 
       "nginx"
+
+      "ory/tap/cli"
     ];
     casks = [
       "wezterm"
@@ -72,6 +82,7 @@
       "homebrew/services"
       # custom
       "FelixKratz/formulae" # borders
+      "ory/tap"
     ];
   };
 }
