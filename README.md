@@ -15,7 +15,7 @@ system specific. everything inside `shell/` also works on linux.
 ## architecture
 
 - `flake.nix`
-  - `darwinConfigurations.macmini.private` is the entrypoint for macOS
+  - `darwinConfigurations.macmini` is the entrypoint for macOS
 - `darwin/` nix-darwin configuration
 - `home-manager/` home-manager configuration
 - `shell/` cross-platform shell configuration
@@ -28,7 +28,7 @@ system specific. everything inside `shell/` also works on linux.
 sh <(curl -L https://nixos.org/nix/install)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 git clone git@github.com:sawadashota/nixpkgs.git ~/.nixpkgs
-# make sure your hostname is set to "macmini.private"
+# make sure your hostname is set to "macmini"
 sudo reboot
 
 # build the system
