@@ -47,8 +47,6 @@ manual steps:
 - Configure 1Password
   - Developer: SSH / CLI
   - Browser: Google Chrome
-- enable brew services
-  - `brew services start sketchybar`
 - Docker
   - `colima start`
   - `sudo ln -sf $HOME/.colima/default/docker.sock /var/run/docker.sock`
@@ -60,8 +58,6 @@ manual steps:
 - enable icloud sync
 - login to vscode for settings sync
 - enable key repeat for vim extension in intellij and vscode
-  - `defaults write -g ApplePressAndHoldEnabled -bool false`
-- connect bluetooth keyboard and select `disable internal keyboard`
 - Download [CleanShot X](https://licenses.cleanshot.com/download/cleanshotx) if you want
 - Install [iStat Menu 7](https://apps.apple.com/jp/app/istat-menus-7/id6499559693?l=en-US&mt=12)
   - Download helper tool from [here](https://bjango.com/help/istatmenus7/helper/)
