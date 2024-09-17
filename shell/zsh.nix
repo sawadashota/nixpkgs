@@ -24,7 +24,9 @@
       # used for RTL AWS login
       [ -f ~/.aws/env.sh ] && source ~/.aws/env.sh
 
-      source ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
+      # source ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
+      eval "$(mise activate zsh)"
+      export PATH="${pkgs.mise}/share/mise/shims:$PATH"
 
       bindkey "^A" beginning-of-line
       bindkey "^E" end-of-line

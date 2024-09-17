@@ -19,6 +19,7 @@
       #"borders" # borders for windows
       # "openai-whisper" # transcode audio to text
       "ykman"
+      "git-town"
 
       "docker"
       "docker-machine"
