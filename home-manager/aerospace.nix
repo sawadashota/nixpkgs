@@ -138,14 +138,6 @@
       if.app-name-regex-substring = 'music'
       run = 'move-node-to-workspace 4'
 
-      [[on-window-detected]]
-      if.app-name-regex-substring = '1password'
-      run = 'move-node-to-workspace 4'
-
-      [[on-window-detected]]
-      if.app-name-regex-substring = 'yubico'
-      run = 'move-node-to-workspace 4'
-
       # business communication
       [[on-window-detected]]
       if.app-name-regex-substring = 'zoom'
