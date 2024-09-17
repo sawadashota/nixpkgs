@@ -8,6 +8,7 @@
   home = {
     packages = with pkgs; [
       neovim # customized by overlay
+      devenv
 
       devenv
 
@@ -55,11 +56,13 @@
       k6 # load testing tool
       slides # terminal presentation tool
       presenterm # presentation tool
-      asdf-vm # managing different versions
+      # asdf-vm # managing different versions
+      mise
       comma # run nix binaries on demand
       peco
       ghq
       tree
+      mob # mob programing tool
 
       # database
       pgcli
@@ -82,7 +85,7 @@
       poetry # python tools
 
       ## node
-      deno # node runtime
+      #deno # node runtime
       nodejs
       nodePackages.npm
       nodePackages.yarn
