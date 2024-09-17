@@ -10,8 +10,6 @@
       neovim # customized by overlay
       devenv
 
-      devenv
-
       # net tools
       bind
       nmap
