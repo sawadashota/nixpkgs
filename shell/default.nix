@@ -5,7 +5,6 @@
     ./zellij.nix
     ./git.nix
   ];
-
   home = {
     packages = with pkgs; [
       neovim # customized by overlay
