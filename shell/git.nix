@@ -6,9 +6,10 @@
     userEmail = "shota@sslife.tech";
     signing = {
       key = null; # gnupg decides by mail
-      signByDefault = true;
+      signByDefault = false;
     };
     aliases = {
+      sw = "switch";
       cm = "commit";
       ca = "commit --amend --no-edit";
       co = "checkout";
@@ -27,8 +28,11 @@
 
       ri = "rebase -i";
       rc = "rebase --continue";
+
+      rs = "reset";
     };
     ignores = [
+      ".envrc"
       # ide
       ".idea"
       ".vs"
@@ -58,7 +62,6 @@
       push.autoSetupRemote = true;
       delta = { line-numbers = true; };
       ghq = { root = "~/repo/"; };
-      credential = { helper = "osxkeychain"; };
     };
   };
 

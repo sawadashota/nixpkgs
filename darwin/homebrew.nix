@@ -22,8 +22,6 @@
       "mise"
 
       "docker"
-      "docker-machine"
-      "colima"
 
       # cloud
       "awscli"
@@ -52,7 +50,7 @@
       "zoom"
 
       # utilities
-      "1password"
+      # "1password"
       "1password-cli"
       "hiddenbar" # hides menu bar icons
       "meetingbar" # shows upcoming meetings
@@ -65,6 +63,7 @@
 
       # virtualization
       #"docker" # docker desktop
+      "orbstack"
 
       "wireshark" # network sniffer
       "sf-symbols" # patched font for sketchybar
@@ -75,6 +74,7 @@
       "visual-studio-code" # code editor
       "zed" # vim like editor
       "yubico-authenticator"
+      "figma"
     ];
     taps = [
       # default

@@ -75,8 +75,8 @@
         AppleScrollerPagingBehavior = true;
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
-        InitialKeyRepeat = 10;
-        KeyRepeat = 1;
+        # InitialKeyRepeat = 10;
+        # KeyRepeat = 1;
         NSAutomaticSpellingCorrectionEnabled = false;
         NSAutomaticWindowAnimationsEnabled = false;
         NSWindowResizeTime = 0.0;
