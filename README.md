@@ -47,9 +47,6 @@ manual steps:
 - Configure 1Password
   - Developer: SSH / CLI
   - Browser: Google Chrome
-- Docker
-  - `colima start`
-  - `sudo ln -sf $HOME/.colima/default/docker.sock /var/run/docker.sock`
 - configure applications
   - raycast (use import / export)
   - meetingbar
