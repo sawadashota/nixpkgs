@@ -22,7 +22,7 @@
 
   fonts = {
     packages = with pkgs; [
-        pkgs.nerd-fonts.droid-sans-mono
+        pkgs.nerd-fonts.jetbrains-mono
     ];
   };
 
