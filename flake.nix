@@ -68,7 +68,7 @@
 
             nix = {
               # enable flakes per default
-              package = pkgs.nixFlakes;
+              package = pkgs.nixVersions.stable;
               gc = {
                 automatic = false;
                 user = user;
@@ -98,7 +98,7 @@
               users.${user} = { ... }:
                 with inputs; {
                   imports = [ feovim.feovim ./home-manager ./shell ];
-                  home.stateVersion = "23.11";
+                  home.stateVersion = "24.11";
                   # from feovim
                   feovim = {
                     ideavim.enable = true;
