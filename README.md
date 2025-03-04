@@ -1,70 +1,92 @@
-# my dotfiles
+# Dotfiles & System Configuration
 
-i currently only use macos as my daily driver so this repository is really
-system specific. everything inside `shell/` also works on linux.
+This repository contains configuration files and scripts tailored primarily for macOS. Many configurations are system-specific, while those in the `shell/` directory are designed to work on both macOS and Linux.
 
-## programs
+## Programs & Tools
 
-- distro: macOS
-- window manager: aerospace
-- terminal: wezterm + zellij
-- shell: zsh + pretzo
-- editor: helix / neovim
-  ([configuration](https://github.com/sawadashota/feovim))
+- **Operating System:** macOS
+- **Window Manager:** aerospace
+- **Terminal:** wezterm with zellij
+- **Shell:** zsh with pretzo
+- **Editors:** helix / neovim  
+  [Neovim Configuration](https://github.com/sawadashota/feovim)
 
-## architecture
+## Project Structure
 
-- `flake.nix`
-  - `darwinConfigurations.macmini` is the entrypoint for macOS
-- `darwin/` nix-darwin configuration
-- `home-manager/` home-manager configuration
-- `shell/` cross-platform shell configuration
-- `github.com:sawadashota/feovim` neovim configuration
+- **flake.nix**  
+  Entry point for macOS configuration via `darwinConfigurations.macmini`.
+- **darwin/**  
+  Contains nix-darwin configuration.
+- **home-manager/**  
+  Contains home-manager configuration.
+- **shell/**  
+  Cross-platform shell configuration (also works on Linux).
+- **github.com:sawadashota/feovim**  
+  Neovim configuration repository.
 
-## macos
+## macOS Setup & Installation
+
+Run the following commands to install and configure your system:
 
 ```bash
-# installation
+# Installation
 sh <(curl -L https://nixos.org/nix/install)
+  
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-git clone git@github.com:sawadashota/nixpkgs.git ~/.nixpkgs
-# make sure your hostname is set to "macmini"
-sudo reboot
 
-# build the system
+git clone git@github.com:sawadashota/nixpkgs.git ~/.nixpkgs
+
+# Ensure your hostname is set to "macmini"
+sudo reboot
+```
+
+### Building & Switching
+
+```bash
 cd ~/.nixpkgs
 nix --experimental-features "nix-command flakes" build ".#darwinConfigurations.macmini.system"
-# switch to new system
 ./result/sw/bin/darwin-rebuild switch --flake ~/.nixpkgs
+```
 
-# all in one command
+For a streamlined command:
+
+```bash
 nix run nix-darwin -- switch --flake ~/.nixpkgs
 ```
 
-manual steps:
+## Manual Configuration Steps
 
-- Reboot to enable IME
-- Configure 1Password
-  - Developer: SSH / CLI
-  - Browser: Google Chrome
-- configure applications
-  - raycast (use import / export)
-  - meetingbar
-  - hiddenbar
-  - time-out
-- enable icloud sync
-- login to vscode for settings sync
-- enable key repeat for vim extension in intellij and vscode
-- Download [CleanShot X](https://licenses.cleanshot.com/download/cleanshotx) if you want
-- Install [iStat Menu 7](https://apps.apple.com/jp/app/istat-menus-7/id6499559693?l=en-US&mt=12)
-  - Download helper tool from [here](https://bjango.com/help/istatmenus7/helper/)
+- Reboot to enable IME.
+- Configure 1Password:
+  - Developer setup via SSH/CLI.
+  - Browser setup through Google Chrome.
+- Set up applications:
+  - Raycast (use import/export)
+  - Meetingbar
+  - Hiddenbar
+  - Time-Out
+- Enable iCloud sync.
+- Log in to VSCode for settings sync.
+- Enable key repeat in Vim integrations for IntelliJ and VSCode.
+- Optionally, download and install:
+  - [CleanShot X](https://licenses.cleanshot.com/download/cleanshotx)
+  - [iStat Menus 7](https://apps.apple.com/jp/app/istat-menus-7/id6499559693?l=en-US&mt=12)  
+    (Download the helper tool from [Bjango](https://bjango.com/help/istatmenus7/helper/))
 
-## update
+## Updating the System
 
-```bash
-# all inputs
-nix flake update
+- **Update all inputs:**
 
-# single input
-nix flake lock --update-input <input>
-```
+  ```bash
+  nix flake update
+  ```
+
+- **Update a single input:**
+
+  ```bash
+  nix flake lock --update-input <input>
+  ```
+
+## License
+
+(Add license information if applicable)
