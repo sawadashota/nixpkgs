@@ -1,7 +1,7 @@
 { ... }: {
   homebrew = {
     enable = true;
-    global = { autoUpdate = false; };
+    global = { autoUpdate = true; };
     # will not be uninstalled when removed
     masApps = {
       Xcode = 497799835;
@@ -10,8 +10,8 @@
     onActivation = {
       # "zap" removes manually installed brews and casks
       cleanup = "zap";
-      autoUpdate = false;
-      upgrade = false;
+      autoUpdate = true;
+      upgrade = true;
     };
     brews = [
       "sniffnet" # monitor network traffic
@@ -27,7 +27,7 @@
       "awscli"
       "aws-sam-cli"
       "terraform"
-      
+
       # protocol buffers
       "protobuf"
       "buf"
@@ -37,7 +37,7 @@
 
       "nginx"
 
-      "ory/tap/cli"
+      #"ory/tap/cli"
     ];
     casks = [
       "wezterm"
@@ -83,7 +83,6 @@
       "homebrew/services"
       # custom
       "FelixKratz/formulae" # borders
-      "ory/tap"
     ];
   };
 }

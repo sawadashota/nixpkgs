@@ -45,11 +45,11 @@
         "whaler": "whaler"
       },
       "locked": {
-        "lastModified": 1735604509,
-        "narHash": "sha256-NT/RkqqR1EmLCGcSaq10qoVp2FhZ8kvFGZLg0iAwY4k=",
+        "lastModified": 1742041784,
+        "narHash": "sha256-fyxRdArG2xhwQKC1SiWMKiSArHsYQ/netfjRH39dJFg=",
         "owner": "sawadashota",
         "repo": "feovim",
-        "rev": "ffcd659c026a6626089bf58e1852218d88ec795e",
+        "rev": "463b61d4ee82890e3f8885fa120cf798bd9b690b",
         "type": "github"
       },
       "original": {
@@ -79,11 +79,11 @@
     "github-nvim-theme": {
       "flake": false,
       "locked": {
-        "lastModified": 1727149670,
-        "narHash": "sha256-EreIuni6/XR0428rO4Lbi2usIreOyPWKm7kJJA2Nwqo=",
+        "lastModified": 1735641120,
+        "narHash": "sha256-/A4hkKTzjzeoR1SuwwklraAyI8oMkhxrwBBV9xb59PA=",
         "owner": "projekt0n",
         "repo": "github-nvim-theme",
-        "rev": "0e4636f556880d13c00d8a8f686fae8df7c9845f",
+        "rev": "c106c9472154d6b2c74b74565616b877ae8ed31d",
         "type": "github"
       },
       "original": {
@@ -134,11 +134,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1735603221,
-        "narHash": "sha256-hUEvv/2D2PrXi0AQof+rENFbni2TyxUgTliHVEb2eDE=",
+        "lastModified": 1742040161,
+        "narHash": "sha256-adnVWf7hyugeGbsUMMVMU+qJTl+923vTs1tyN26a4b8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "9b0737128489e9a23c9570cffce7aae5bf9db899",
+        "rev": "5cd068d37b8f0f400ecd18a7ca43813364a78d17",
         "type": "github"
       },
       "original": {
