@@ -12,10 +12,6 @@
 
   programs = { zsh.enable = true; };
 
-  services = {
-    nix-daemon.enable = true;
-  };
-
   networking = {
     knownNetworkServices = [ "Wi-Fi" ];
   };
@@ -26,7 +22,7 @@
     ];
   };
 
-  security = { pam.enableSudoTouchIdAuth = true; };
+  security = { pam.services.sudo_local.touchIdAuth = true; };
 
   system = {
     keyboard = {

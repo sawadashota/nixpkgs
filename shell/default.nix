@@ -2,7 +2,7 @@
   imports = [
     ./zsh.nix
     ./direnv.nix
-    ./zellij.nix
+    #./zellij.nix
     ./git.nix
   ];
   home = {
@@ -46,7 +46,7 @@
       ytt # yaml templating engine
       #zk # zettelkasten
       #mask # taskrunner
-      diskonaut # explore disk size
+      #diskonaut # explore disk size
       gnupg # gpg
       gping # ping with a graph
       #ruby # scripting language
@@ -219,7 +219,7 @@
 
     go = {
       enable = true;
-      package = pkgs.go_1_23;
+      package = pkgs.go_1_24;
       goPath = "go";
       goBin = "go/bin";
       goPrivate = [ ];
@@ -260,16 +260,6 @@
         {
           description = "show size of a folder";
           command = "du -hs <folder>";
-        }
-        {
-          description = "garden kubeconfig from ske-ci ondemand cluster";
-          command =
-            "kubectl get secret garden-kubeconfig-for-admin -n garden -o jsonpath='{.data.kubeconfig}' | base64 -d > garden-kubeconfig-for-admin.yaml";
-        }
-        {
-          description = "get all images used in a kubernetes cluster";
-          command =
-            "kubectl get pods --all-namespaces -o jsonpath=\"{.items[*].spec['initContainers', 'containers'][*].image}\" | tr -s '[[:space:]]' '\n' | sort | uniq -c";
         }
       ];
     };

@@ -78,7 +78,6 @@
       zjw = "zellij -l welcome";
 
       # nix
-      ne = "nvim -c ':cd ~/.nixpkgs' ~/.nixpkgs";
       nf = "nix run nix-darwin -- switch --flake ~/.nixpkgs";
       clean =
         "nix-collect-garbage -d && nix-store --gc && nix-store --verify --check-contents && nix store optimise";
@@ -121,7 +120,13 @@
         dotExpansion = true;
         keymap = "vi";
       };
-      pmodules = [ "autosuggestions" "directory" "editor" "git" "terminal" ];
+      pmodules = [
+        "autosuggestions"
+        "directory"
+        "editor"
+        #"git"
+        "terminal"
+      ];
     };
   };
 }

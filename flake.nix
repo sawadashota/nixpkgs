@@ -71,7 +71,6 @@
               package = pkgs.nixVersions.stable;
               gc = {
                 automatic = false;
-                user = user;
               };
               settings = {
                 allowed-users = [ user ];
@@ -83,7 +82,7 @@
               };
             };
           })
-          home-manager.darwinModule
+          home-manager.darwinModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
