@@ -45,11 +45,11 @@
         "whaler": "whaler"
       },
       "locked": {
-        "lastModified": 1742041784,
-        "narHash": "sha256-fyxRdArG2xhwQKC1SiWMKiSArHsYQ/netfjRH39dJFg=",
+        "lastModified": 1742042854,
+        "narHash": "sha256-J4VUdU9aUkjeraas6d6VDrlFV/e/7zZQUWb9ZOrS2ZI=",
         "owner": "sawadashota",
         "repo": "feovim",
-        "rev": "463b61d4ee82890e3f8885fa120cf798bd9b690b",
+        "rev": "e1eccd25445f77d51259441edaccdd110e7832d4",
         "type": "github"
       },
       "original": {
@@ -165,11 +165,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1742040161,
-        "narHash": "sha256-adnVWf7hyugeGbsUMMVMU+qJTl+923vTs1tyN26a4b8=",
+        "lastModified": 1742042807,
+        "narHash": "sha256-bc3PBVyREpuKG3ik8nh8SihnOr+6DqrLSiljDZ5R7xU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5cd068d37b8f0f400ecd18a7ca43813364a78d17",
+        "rev": "5540a1a28cd67da31966b030f53ef8a40f9f7fba",
         "type": "github"
       },
       "original": {
