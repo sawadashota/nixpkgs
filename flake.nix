@@ -19,9 +19,6 @@
 
     nixpkgs-zsh-fzf-tab.url =
       "github:nixos/nixpkgs/8193e46376fdc6a13e8075ad263b4b5ca2592c03";
-
-    # my custom neovim
-    feovim.url = "github:sawadashota/feovim";
   };
 
   outputs = { self, nixpkgs, darwin, home-manager, ... }@inputs:
@@ -30,9 +27,6 @@
         allowUnfree = true;
         allowUnsupportedSystem = false;
       };
-      overlays = with inputs; [
-        feovim.overlay
-      ];
       user = "shotasawada";
       hostname = "macmini";
       system = "aarch64-darwin";
@@ -48,8 +42,6 @@
           ./darwin
           ({ pkgs, inputs, ... }: {
             nixpkgs.config = nixpkgsConfig;
-            nixpkgs.overlays = overlays;
-
             system = {
               stateVersion = 4;
               configurationRevision = self.rev or self.dirtyRev or null;
@@ -96,13 +88,8 @@
               };
               users.${user} = { ... }:
                 with inputs; {
-                  imports = [ feovim.feovim ./home-manager ./shell ];
+                  imports = [ ./home-manager ./shell ];
                   home.stateVersion = "24.11";
-                  # from feovim
-                  feovim = {
-                    ideavim.enable = true;
-                    vscode.enable = true;
-                  };
                 };
             };
           }

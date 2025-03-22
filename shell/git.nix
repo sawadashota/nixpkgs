@@ -70,7 +70,7 @@
     enable = true;
     #extensions = [ gh-markdown-preview ];
     settings = {
-      editor = "nvim";
+      editor = "hx";
     };
   };
 }
