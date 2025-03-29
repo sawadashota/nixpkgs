@@ -24,37 +24,27 @@
       zstd
       pwgen
 
-      grc # colored log output
       gitAndTools.delta # pretty diff tool
-      sshfs # mount folders via ssh
       graph-easy # draw graphs in the terminal
-      tealdeer # community driven man pages
       dive # analyse docker images
-      hyperfine # benchmark tool
-      sipcalc # ip subnet calculator
       ffmpeg # video editing and cutting
-      rclone # sync files
+      # rclone # sync files
       duf # disk usage
       httpie # awesome alternative to curl
-      mongodb-tools
       #viddy # terminal watch command
       unixtools.watch # watches commands
       yq-go # yaml, toml parser
-      termdown # terminal countdown
       #tmate # share terminal via web
       #silicon # create code snippets as images
-      ytt # yaml templating engine
+      # ytt # yaml templating engine
       #zk # zettelkasten
       #mask # taskrunner
       #diskonaut # explore disk size
-      gnupg # gpg
-      gping # ping with a graph
+      # gnupg # gpg
+      # gping # ping with a graph
       #ruby # scripting language
       #corepack # node wrappers
       k6 # load testing tool
-      slides # terminal presentation tool
-      presenterm # presentation tool
-      # asdf-vm # managing different versions
       mise
       comma # run nix binaries on demand
       peco
@@ -79,20 +69,20 @@
       # programming
 
       ## python
-      python3
-      poetry # python tools
+      # python3
+      # poetry # python tools
 
       ## node
       #deno # node runtime
-      nodejs
-      nodePackages.npm
-      nodePackages.yarn
+      # nodejs
+      # nodePackages.npm
+      # nodePackages.yarn
       #nodePackages.expo-cli
 
       ## golang
-      gotests
-      gosimports
-      golangci-lint
+      # gotests
+      # gosimports
+      # golangci-lint
 
       ## kotlin
       # ktlint
@@ -103,7 +93,7 @@
       lua
       shfmt
       rustup # rust
-      cue
+      # cue
     ];
 
     shellAliases = {
