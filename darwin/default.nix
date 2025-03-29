@@ -163,7 +163,7 @@
             };
             "15" = { enabled = false; };
             "8" = {
-              enabled = false;
+              enabled = true;
               value = {
                 parameters = [ 65535 99 8650752 ];
                 type = "standard";
@@ -285,6 +285,13 @@
                 type = "standard";
               };
             };
+            "64" = {
+              enabled = false;
+              value = {
+                parameters = [ 32 49 1048576 ];
+                type = "standard";
+              };
+            };
             "223" = {
               enabled = false;
               value = {
@@ -296,6 +303,13 @@
               enabled = false;
               value = {
                 parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "65" = {
+              enabled = false;
+              value = {
+                parameters = [ 32 49 1572864 ];
                 type = "standard";
               };
             };
