@@ -72,12 +72,29 @@
         "com.apple.trackpad.scaling" = 2.0;
       };
       CustomUserPreferences = {
+        NSGlobalDomain = {
+          # 1. Setting All Application Shortcuts in System Preferenece
+          # 2. Check current setting by following command:
+          #      defaults read -globalDomain NSUserKeyEquivalents
+          NSUserKeyEquivalents = {
+            "Make Concise" = "@$\\Uf709";
+            "Make Friendly" = "@$\\Uf707";
+            "Make Professional" = "@$\\Uf708";
+            Proofread = "@$\\Uf705";
+            Rewrite = "@$\\Uf706";
+            "Show Writing Tools" = "@$\\Uf704";
+          };
+        };
         "com.apple.screencapture" = {
           location = "~/Downloads";
           type = "png";
           name = "SS";
         };
         "com.apple.symbolichotkeys" = {
+          # 1. Setting Keyboard Shortcuts in System Preference
+          # 2. exec following command
+          #   curl -sS https://gist.githubusercontent.com/sawadashota/8e7ce32234e0f07a03e955f22ec4c0f9/raw/859339f80b34f8f8161509128f7fc959c627f6e6/export-symbolichotkeys-for-nix.sh | sh
+          # 3. paste it!
           AppleSymbolicHotKeys = {
             "231" = {
               enabled = false;
