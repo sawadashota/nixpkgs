@@ -65,12 +65,10 @@
     };
   };
 
-    # GitHub CLI
+  # GitHub CLI
   programs.gh = {
     enable = true;
     #extensions = [ gh-markdown-preview ];
-    settings = {
-      editor = "hx";
-    };
+    settings = { editor = "hx"; };
   };
 }

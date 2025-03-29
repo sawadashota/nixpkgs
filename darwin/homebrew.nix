@@ -54,8 +54,7 @@
       "1password-cli"
       "hiddenbar" # hides menu bar icons
       "meetingbar" # shows upcoming meetings
-      #"karabiner-elements" # keyboard remap
-      "nikitabobko/tap/aerospace" # tiling window manager
+      # "nikitabobko/tap/aerospace" # tiling window manager
       "caffeine"
 
       # coding
@@ -67,7 +66,6 @@
 
       "wireshark" # network sniffer
       "sf-symbols" # patched font for sketchybar
-      "time-out" # blurs screen every x mins
       "raycast" # launcher on steroids
       #"keycastr" # show keystrokes on screen
       #"obsidian" # zettelkasten
@@ -82,7 +80,7 @@
       #"homebrew/cask-fonts"
       "homebrew/services"
       # custom
-      "FelixKratz/formulae" # borders
+      # "FelixKratz/formulae" # borders
     ];
   };
 }

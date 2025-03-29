@@ -143,11 +143,7 @@
       py = "python";
     };
 
-    sessionPath = [
-      "$HOME/go/bin"
-      "$HOME/.local/bin"
-      "$HOME/.cargo/bin"
-    ];
+    sessionPath = [ "$HOME/go/bin" "$HOME/.local/bin" "$HOME/.cargo/bin" ];
 
     sessionVariables = {
       EDITOR = "hx";
@@ -167,9 +163,7 @@
       settings = {
         theme = "tokyonight";
 
-        keys = {
-          insert = { j = { k = "normal_mode"; }; };
-        };
+        keys = { insert = { j = { k = "normal_mode"; }; }; };
 
         editor = {
           line-number = "absolute";
@@ -240,10 +234,7 @@
       enableZshIntegration = true;
       defaultCommand =
         "fd --type f --hidden --follow --exclude .git --exclude .vim --exclude .cache --exclude vendor --exclude node_modules";
-      defaultOptions = [
-        "--border sharp"
-        "--inline-info"
-      ];
+      defaultOptions = [ "--border sharp" "--inline-info" ];
     };
 
     # snippet manager

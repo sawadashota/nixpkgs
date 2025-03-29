@@ -1,7 +1,5 @@
 { pkgs, ... }: {
-  imports = [
-    ./homebrew.nix
-  ];
+  imports = [ ./homebrew.nix ];
 
   environment = {
     variables = {
@@ -12,15 +10,9 @@
 
   programs = { zsh.enable = true; };
 
-  networking = {
-    knownNetworkServices = [ "Wi-Fi" ];
-  };
+  networking = { knownNetworkServices = [ "Wi-Fi" ]; };
 
-  fonts = {
-    packages = with pkgs; [
-        pkgs.nerd-fonts.jetbrains-mono
-    ];
-  };
+  fonts = { packages = with pkgs; [ pkgs.nerd-fonts.jetbrains-mono ]; };
 
   security = { pam.services.sudo_local.touchIdAuth = true; };
 
@@ -85,7 +77,289 @@
           type = "png";
           name = "SS";
         };
+        "com.apple.symbolichotkeys" = {
+          AppleSymbolicHotKeys = {
+            "231" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "12" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 122 8650752 ];
+                type = "standard";
+              };
+            };
+            "226" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "21" = { enabled = false; };
+            "13" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 98 8650752 ];
+                type = "standard";
+              };
+            };
+            "79" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 123 8650752 ];
+                type = "standard";
+              };
+            };
+            "232" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "227" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "23" = { enabled = false; };
+            "7" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 120 8650752 ];
+                type = "standard";
+              };
+            };
+            "32" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 126 8650752 ];
+                type = "standard";
+              };
+            };
+            "15" = { enabled = false; };
+            "8" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 99 8650752 ];
+                type = "standard";
+              };
+            };
+            "9" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 118 8650752 ];
+                type = "standard";
+              };
+            };
+            "33" = {
+              enabled = true;
+              value = {
+                parameters = [ 65535 125 8650752 ];
+                type = "standard";
+              };
+            };
+            "228" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "118" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 18 262144 ];
+                type = "standard";
+              };
+            };
+            "25" = { enabled = false; };
+            "215" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "34" = {
+              enabled = true;
+              value = {
+                parameters = [ 65535 126 8781824 ];
+                type = "standard";
+              };
+            };
+            "17" = { enabled = false; };
+            "26" = { enabled = false; };
+            "175" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "229" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "162" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 96 9961472 ];
+                type = "standard";
+              };
+            };
+            "35" = {
+              enabled = true;
+              value = {
+                parameters = [ 65535 125 8781824 ];
+                type = "standard";
+              };
+            };
+            "216" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "36" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 103 8388608 ];
+                type = "standard";
+              };
+            };
+            "19" = { enabled = false; };
+            "222" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "163" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "217" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "81" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 124 8650752 ];
+                type = "standard";
+              };
+            };
+            "223" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "218" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "159" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 36 262144 ];
+                type = "standard";
+              };
+            };
+            "57" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 100 8650752 ];
+                type = "standard";
+              };
+            };
+            "224" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "219" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "230" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "10" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 96 8650752 ];
+                type = "standard";
+              };
+            };
+            "59" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 96 9437184 ];
+                type = "standard";
+              };
+            };
+            "190" = {
+              enabled = false;
+              value = {
+                parameters = [ 113 12 8388608 ];
+                type = "standard";
+              };
+            };
+            "225" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 65535 0 ];
+                type = "standard";
+              };
+            };
+            "11" = {
+              enabled = false;
+              value = {
+                parameters = [ 65535 97 8650752 ];
+                type = "standard";
+              };
+            };
+          };
+        };
       };
     };
+    # workaround to apply AppleSymbolicHotKeys
+    # https://github.com/nix-darwin/nix-darwin/issues/518#issuecomment-2691433665
+    activationScripts.postUserActivation.text = ''
+      /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+    '';
   };
 }

@@ -61,9 +61,7 @@
             nix = {
               # enable flakes per default
               package = pkgs.nixVersions.stable;
-              gc = {
-                automatic = false;
-              };
+              gc = { automatic = false; };
               settings = {
                 allowed-users = [ user ];
                 experimental-features = [ "nix-command" "flakes" ];

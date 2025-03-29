@@ -228,7 +228,8 @@
     sha256 = "sha256-pik/Cj6xuyd6vrno5GtrON4TW0rVRHHkcxD8pAMth9c=";
   };
   home.file.".config/zellij/plugins/monocle.wasm".source = pkgs.fetchurl {
-    url = "https://github.com/imsnif/monocle/releases/download/v0.100.0/monocle.wasm";
+    url =
+      "https://github.com/imsnif/monocle/releases/download/v0.100.0/monocle.wasm";
     sha256 = "sha256-MxS5OBEUdrcuRfvewLt+q24lb8J+3O4/yjbgMD6nnqQ=";
   };
 }
