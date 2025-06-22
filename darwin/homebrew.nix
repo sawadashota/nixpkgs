@@ -37,6 +37,8 @@
 
       "nginx"
 
+      "go"
+
       #"ory/tap/cli"
     ];
     casks = [

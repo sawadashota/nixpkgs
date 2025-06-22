@@ -389,8 +389,8 @@
     };
     # workaround to apply AppleSymbolicHotKeys
     # https://github.com/nix-darwin/nix-darwin/issues/518#issuecomment-2691433665
-    activationScripts.postUserActivation.text = ''
-      /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
-    '';
+    # activationScripts.postUserActivation.text = ''
+    #   /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+    # '';
   };
 }

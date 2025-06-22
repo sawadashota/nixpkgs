@@ -15,7 +15,7 @@
       share = true;
     };
 
-    initExtra = ''
+    initContent = ''
       [ -f ~/.env/env.sh ] && source ~/.env/env.sh
 
       # used for homebrew

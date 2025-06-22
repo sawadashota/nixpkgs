@@ -47,6 +47,7 @@
               configurationRevision = self.rev or self.dirtyRev or null;
             };
 
+            system.primaryUser = "${user}";
             users.users.${user} = {
               home = "/Users/${user}";
               shell = pkgs.zsh;
