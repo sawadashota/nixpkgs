@@ -1,0 +1,10 @@
+theme = Arthur
+
+window-height = 400
+window-width = 180
+
+# Quick Terminal
+quick-terminal-position = "right"
+quick-terminal-screen = "mouse"
+quick-terminal-animation-duration = 0.3
+keybind = "global:cmd+shift+t=toggle_quick_terminal"

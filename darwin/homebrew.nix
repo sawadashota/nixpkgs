@@ -42,6 +42,7 @@
       #"ory/tap/cli"
     ];
     casks = [
+      "ghostty"
       "wezterm"
       "cmd-eikana"
       "google-japanese-ime"
