@@ -1,12 +1,13 @@
-{ pkgs, pkgs-zsh-fzf-tab, ... }: {
+{ pkgs, pkgs-zsh-fzf-tab, config, ... }: {
   programs.zsh = {
     enable = true;
     enableCompletion = false;
     autocd = true;
-    dotDir = ".config/zsh";
+    dotDir = "${config.xdg.configHome}/zsh";
     autosuggestion.enable = true;
 
     history = {
+      path = "${config.xdg.configHome}/zsh/.zsh_history";
       expireDuplicatesFirst = true;
       ignoreDups = true;
       ignoreSpace = true; # ignore commands starting with a space

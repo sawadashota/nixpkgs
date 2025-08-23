@@ -50,11 +50,8 @@
       peco
       ghq
       tree
-      mob # mob programing tool
 
       # database
-      pgcli
-      #redis # to use the cli
 
       # gnu binaries
       coreutils-full # multiple tools

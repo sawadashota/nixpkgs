@@ -8,20 +8,20 @@ This repository contains configuration files and scripts tailored primarily for 
 - **Window Manager:** aerospace
 - **Terminal:** wezterm with zellij
 - **Shell:** zsh with pretzo
-- **Editors:** helix / neovim  
+- **Editors:** helix / neovim
   [Neovim Configuration](https://github.com/sawadashota/feovim)
 
 ## Project Structure
 
-- **flake.nix**  
+- **flake.nix**
   Entry point for macOS configuration via `darwinConfigurations.macmini`.
-- **darwin/**  
+- **darwin/**
   Contains nix-darwin configuration.
-- **home-manager/**  
+- **home-manager/**
   Contains home-manager configuration.
-- **shell/**  
+- **shell/**
   Cross-platform shell configuration (also works on Linux).
-- **github.com:sawadashota/feovim**  
+- **github.com:sawadashota/feovim**
   Neovim configuration repository.
 
 ## macOS Setup & Installation
@@ -31,7 +31,7 @@ Run the following commands to install and configure your system:
 ```bash
 # Installation
 sh <(curl -L https://nixos.org/nix/install)
-  
+
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 git clone git@github.com:sawadashota/nixpkgs.git ~/.nixpkgs
@@ -51,7 +51,7 @@ nix --experimental-features "nix-command flakes" build ".#darwinConfigurations.m
 For a streamlined command:
 
 ```bash
-nix run nix-darwin -- switch --flake ~/.nixpkgs
+sudo nix run nix-darwin -- switch --flake ~/.nixpkgs
 ```
 
 ## Manual Configuration Steps
@@ -70,7 +70,7 @@ nix run nix-darwin -- switch --flake ~/.nixpkgs
 - Enable key repeat in Vim integrations for IntelliJ and VSCode.
 - Optionally, download and install:
   - [CleanShot X](https://licenses.cleanshot.com/download/cleanshotx)
-  - [iStat Menus 7](https://apps.apple.com/jp/app/istat-menus-7/id6499559693?l=en-US&mt=12)  
+  - [iStat Menus 7](https://apps.apple.com/jp/app/istat-menus-7/id6499559693?l=en-US&mt=12)
     (Download the helper tool from [Bjango](https://bjango.com/help/istatmenus7/helper/))
 
 ## Updating the System
