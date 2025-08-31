@@ -67,11 +67,9 @@
       #"docker" # docker desktop
       "orbstack"
 
-      "wireshark" # network sniffer
       "sf-symbols" # patched font for sketchybar
       "raycast" # launcher on steroids
       #"keycastr" # show keystrokes on screen
-      #"obsidian" # zettelkasten
       "visual-studio-code" # code editor
       "zed" # vim like editor
       "yubico-authenticator"
@@ -82,8 +80,6 @@
       "homebrew/bundle"
       #"homebrew/cask-fonts"
       "homebrew/services"
-      # custom
-      # "FelixKratz/formulae" # borders
     ];
   };
 }
